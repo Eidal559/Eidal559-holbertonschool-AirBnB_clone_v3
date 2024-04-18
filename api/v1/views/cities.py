@@ -69,6 +69,7 @@ def post_city():
 
     return make_response(jsonify(city.to_dict()), 201)
 
+
 @app_views.route('/cities/<city_id>', methods=['PUT'], strict_slashes=False)
 def put_city(city_id):
     """updates city object"""
