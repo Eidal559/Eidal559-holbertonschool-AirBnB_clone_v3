@@ -5,7 +5,7 @@ from models import storage
 from models.state import State
 from api.v1.views import app_views
 from flask import jsonify, abort, request
-from flasgger.utils import swag_from # type: ignore
+from flasgger.utils import swag_from
 
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
