@@ -3,7 +3,7 @@
 from models.state import State
 from models import storage
 from api.v1.views import app_views
-from flask import abort, jsonify, make_response, request
+from flask import abort, jsonify, request
 
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
@@ -34,8 +34,7 @@ def delete_state(state_id):
     if state is None:
         abort(404)
     storage.delete(state)
-    storage.save()
-    return make_response(jsonify({}), 200)
+    return jsonify({}), 200
 
 
 @app_views.route('/states', methods=['POST'], strict_slashes=False)
