@@ -20,7 +20,6 @@ def get_amenities(place_id):
 @app_views.route('/places/<place_id>/amenities/<amenity_id>',
                  methods=['DELETE'], strict_slashes=False)
 def delete_amenity(place_id, amenity_id):
-    """ delete amenity from place """
     place = storage.get(Place, place_id)
     if not place:
         abort(404)
@@ -37,7 +36,6 @@ def delete_amenity(place_id, amenity_id):
 @app_views.route('/places/<place_id>/amenities/<amenity_id>',
                  methods=['POST'], strict_slashes=False)
 def link_amenity_to_place(place_id, amenity_id):
-    """ post amenity by id """
     place = storage.get(Place, place_id)
     if not place:
         abort(404)
