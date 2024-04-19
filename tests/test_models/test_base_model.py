@@ -177,4 +177,3 @@ class test_basemodel(unittest.TestCase):
         updated_instance = BaseModel(**n)
         
         self.assertNotEqual(initial_updated_at, updated_instance.updated_at)
-

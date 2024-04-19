@@ -25,4 +25,3 @@ class test_City(test_basemodel):
         new = self.value()
         expected_type = str if os.getenv('HBNB_TYPE_STORAGE') != 'db' else type(None)
         self.assertEqual(type(new.name), expected_type)
-
