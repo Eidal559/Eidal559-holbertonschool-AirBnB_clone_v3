@@ -64,7 +64,7 @@ class DBStorage:
         if obj is not None:
             self.__session.delete(obj)
 
-    def reload(self):
+      def reload(self):
         """reloads data from the database"""
         Base.metadata.create_all(self.__engine)
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
